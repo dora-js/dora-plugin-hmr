@@ -21,10 +21,11 @@ export default {
   },
 
   'atool-build.updateWebpackConfig': (args, webpackConfig) => {
+    const { port } = args;
     // 修改 entry, 加上 webpack-hot-middleware/client
     webpackConfig.entry = Object.keys(webpackConfig.entry).reduce((memo, key) => {
       memo[key] = [
-        'webpack-hot-middleware/client',
+        `webpack-hot-middleware/client?path=http://127.0.0.1:${port}/__webpack_hmr`,
         webpackConfig.entry[key],
       ];
       return memo;
