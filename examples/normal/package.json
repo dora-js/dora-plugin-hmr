@@ -1,0 +1,12 @@
+{
+  "entry": {
+    "index": "./index.jsx"
+  },
+  "dependencies": {
+    "react": "^0.14.3",
+    "react-dom": "^0.14.3"
+  },
+  "scripts": {
+    "dev": " ../../node_modules/.bin/dora --plugins atool-build,../../lib/index -p 8001"
+  }
+}
