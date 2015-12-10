@@ -1,11 +1,11 @@
 {
-  "name": "dora-plugin-example",
+  "name": "dora-plugin-hmr",
   "version": "0.1.0",
   "repository": {
     "type": "git",
-    "url": "https://github.com/dora-js/dora-plugin-example"
+    "url": "https://github.com/dora-js/dora-plugin-hmr"
   },
-  "homepage": "https://github.com/dora-js/dora-plugin-example",
+  "homepage": "https://github.com/dora-js/dora-plugin-hmr",
   "author": "chencheng <sorrycc@gmail.com>",
   "license": "MIT",
   "main": "./lib",
@@ -44,6 +44,10 @@
     "react": "^0.14.3",
     "react-dom": "^0.14.3",
     "supertest": "^1.1.0"
+  },
+  "peerDependencies": {
+    "atool-build": "^0.3.1",
+    "dora-plugin-atool-build": "^0.2.0"
   },
   "babel": {
     "presets": [

@@ -7,8 +7,7 @@ HMR plugin for dora.
 ## Usage
 
 ```bash
-$ npm i dora dora-plugin-hmr -SD
-$ ./node_modules/.bin/dora --plugins hmr
+$ dora --plugins hmr
 ```
 
 ## Test
