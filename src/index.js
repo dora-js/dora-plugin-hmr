@@ -1,6 +1,15 @@
 import 'babel-polyfill';
 import hotMiddleware from 'webpack-hot-middleware';
 import webpack from 'atool-build/lib/webpack';
+import { join } from 'path';
+
+try {
+  require('babel-core-resolve-enhance')({
+    dirname: __dirname
+  });
+} catch (e) {
+  console.error('[Error] ' + e.message);
+}
 
 let middleware = null;
 
@@ -56,6 +65,10 @@ export default {
 
     // Hot reload plugin
     webpackConfig.plugins.push(new webpack.HotModuleReplacementPlugin());
+
+    // Fallback resolve path for npm2
+    webpackConfig.resolve.fallback = webpackConfig.resolve.fallback || [];
+    webpackConfig.resolve.fallback.push(join(__dirname, '../node_modules'));
 
     return webpackConfig;
   }
