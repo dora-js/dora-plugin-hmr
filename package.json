@@ -15,9 +15,9 @@
     "test": "mocha --require babel-core/register --no-timeouts",
     "lint": "eslint --ext .js src"
   },
-  "pre-commit": [
-  ],
+  "pre-commit": [],
   "dependencies": {
+    "babel-core-resolve-enhance": "~0.1.1",
     "babel-plugin-react-transform": "^2.0.0-beta1",
     "babel-polyfill": "^6.3.14",
     "react-transform-catch-errors": "^1.0.0",
