@@ -46,8 +46,8 @@
     "supertest": "^1.1.0"
   },
   "peerDependencies": {
-    "atool-build": "^0.3.1",
-    "dora-plugin-atool-build": "^0.2.0"
+    "atool-build": "0.x",
+    "dora-plugin-atool-build": "0.x"
   },
   "babel": {
     "presets": [
