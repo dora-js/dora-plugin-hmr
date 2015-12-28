@@ -15,22 +15,23 @@ let middleware = null;
 
 export default {
 
-  'middleware': (args) => {
-    if (!global.g_dora_plugin_atool_build_compiler) {
+  'middleware'() {
+    const compiler = this.get('compiler');
+    if (!compiler) {
       throw new Error('[error] must used together with dora-plugin-atool-build');
     }
 
     return function* (next) {
       if (!middleware) {
-        middleware = hotMiddleware(global.g_dora_plugin_atool_build_compiler);
+        middleware = hotMiddleware(compiler);
       }
       yield middleware.bind(null, this.req, this.res);
       yield next;
     };
   },
 
-  'atool-build.updateWebpackConfig': (args, webpackConfig) => {
-    const { port } = args;
+  'atool-build.updateWebpackConfig'(webpackConfig) {
+    const { port } = this;
     // 修改 entry, 加上 webpack-hot-middleware/client
     webpackConfig.entry = Object.keys(webpackConfig.entry).reduce((memo, key) => {
       memo[key] = [
