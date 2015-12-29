@@ -5,7 +5,7 @@ import { join } from 'path';
 
 try {
   require('babel-core-resolve-enhance')({
-    dirname: __dirname
+    dirname: __dirname,
   });
 } catch (e) {
   console.error('[Error] ' + e.message);
@@ -72,6 +72,6 @@ export default {
     webpackConfig.resolve.fallback.push(join(__dirname, '../node_modules'));
 
     return webpackConfig;
-  }
+  },
 
 };
