@@ -44,22 +44,7 @@ export default {
     // 修改 babel-loader 参数
     webpackConfig.module.loaders.forEach(loader => {
       if (loader.loader === 'babel') {
-        loader.query.plugins.push([
-          'react-transform',
-          {
-            transforms: [
-              {
-                transform: 'react-transform-hmr',
-                imports: ['react'],
-                locals: ['module'],
-              },
-              {
-                transform: 'react-transform-catch-errors',
-                imports: ['react', 'redbox-react'],
-              },
-            ],
-          },
-        ]);
+        loader.query.presets.push('react-hmre');
       }
       return loader;
     });

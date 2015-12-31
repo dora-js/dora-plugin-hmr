@@ -17,12 +17,9 @@
   "pre-commit": [],
   "dependencies": {
     "babel-core-resolve-enhance": "~0.1.1",
-    "babel-plugin-react-transform": "^2.0.0-beta1",
     "babel-polyfill": "^6.3.14",
-    "react-transform-catch-errors": "^1.0.0",
-    "react-transform-hmr": "^1.0.1",
-    "redbox-react": "^1.2.0",
-    "webpack-hot-middleware": "^2.6.0"
+    "babel-preset-react-hmre": "~1.0.0",
+    "webpack-hot-middleware": "~2.6.0"
   },
   "devDependencies": {
     "atool-build": "0.x",
