@@ -29,8 +29,8 @@
     "babel-plugin-add-module-exports": "~0.1.1",
     "babel-preset-es2015": "~6.1.18",
     "babel-preset-stage-0": "~6.1.18",
-    "dora": "~0.2.2",
-    "dora-plugin-atool-build": "0.x",
+    "dora": "0.x",
+    "dora-plugin-webpack": "0.x",
     "eslint": "~1.9.0",
     "eslint-config-airbnb": "~1.0.0",
     "expect": "~1.13.0",
@@ -42,8 +42,8 @@
   },
   "peerDependencies": {
     "atool-build": "0.x",
-    "dora-plugin-atool-build": "0.x",
-    "dora": "~0.2.2"
+    "dora-plugin-webpack": "0.x",
+    "dora": "0.3.x"
   },
   "babel": {
     "presets": [

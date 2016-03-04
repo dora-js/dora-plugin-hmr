@@ -1,4 +1,3 @@
-import 'babel-polyfill';
 import hotMiddleware from 'webpack-hot-middleware';
 import webpack from 'atool-build/lib/webpack';
 import { join } from 'path';
@@ -18,7 +17,7 @@ export default {
   'middleware'() {
     const compiler = this.get('compiler');
     if (!compiler) {
-      throw new Error('[error] must used together with dora-plugin-atool-build');
+      throw new Error('[error] must used together with dora-plugin-webpack');
     }
 
     return function* (next) {
@@ -32,12 +31,10 @@ export default {
 
   'atool-build.updateWebpackConfig'(webpackConfig) {
     const { port } = this;
+    const hotEntry = `webpack-hot-middleware/client?path=http://127.0.0.1:${port}/__webpack_hmr`;
     // 修改 entry, 加上 webpack-hot-middleware/client
     webpackConfig.entry = Object.keys(webpackConfig.entry).reduce((memo, key) => {
-      memo[key] = [
-        `webpack-hot-middleware/client?path=http://127.0.0.1:${port}/__webpack_hmr`,
-        webpackConfig.entry[key],
-      ];
+      memo[key] = [hotEntry].concat(webpackConfig.entry[key]);
       return memo;
     }, {});
 

@@ -12,10 +12,10 @@ describe('index', () => {
     process.chdir(join(__dirname, './fixtures/normal'));
     dora({
       port,
-      plugins: ['dora-plugin-atool-build', '../../../src/index'],
+      plugins: ['dora-plugin-webpack', '../../../src/index'],
       cwd: join(__dirname, './fixtures/normal'),
     });
-    setTimeout(done, 1000);
+    setTimeout(done, 2000);
   });
 
   after(() => {
