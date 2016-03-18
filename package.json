@@ -37,7 +37,8 @@
     "pre-commit": "~1.1.2",
     "react": "^0.14.3",
     "react-dom": "^0.14.3",
-    "supertest": "^1.1.0"
+    "supertest": "^1.1.0",
+    "babel-polyfill": "^6.7.2"
   },
   "peerDependencies": {
     "atool-build": "0.x",

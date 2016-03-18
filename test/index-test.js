@@ -1,3 +1,4 @@
+import 'babel-polyfill';
 import dora from 'dora';
 import { join } from 'path';
 import request from 'supertest';

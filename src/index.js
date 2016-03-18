@@ -29,7 +29,7 @@ export default {
     };
   },
 
-  'atool-build.updateWebpackConfig'(webpackConfig) {
+  'webpack.updateConfig.finally'(webpackConfig) {
     const { port } = this;
     const hotEntry = `webpack-hot-middleware/client?path=http://127.0.0.1:${port}/__webpack_hmr`;
     // 修改 entry, 加上 webpack-hot-middleware/client
