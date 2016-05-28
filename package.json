@@ -16,7 +16,6 @@
   },
   "pre-commit": [],
   "dependencies": {
-    "babel-core-resolve-enhance": "~0.1.1",
     "babel-preset-react-hmre": "~1.1.1",
     "webpack-hot-middleware": "^2.10.0"
   },

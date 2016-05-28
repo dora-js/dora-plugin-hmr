@@ -2,14 +2,6 @@ import hotMiddleware from 'webpack-hot-middleware';
 import webpack from 'atool-build/lib/webpack';
 import { join } from 'path';
 
-try {
-  require('babel-core-resolve-enhance')({
-    dirname: __dirname,
-  });
-} catch (e) {
-  console.error('[Error] ' + e.message);
-}
-
 let middleware = null;
 
 export default {
@@ -39,12 +31,9 @@ export default {
     }, {});
 
     // 修改 babel-loader 参数
-    webpackConfig.module.loaders.forEach(loader => {
-      if (loader.loader === 'babel') {
-        loader.query.presets.push('react-hmre');
-      }
-      return loader;
-    });
+    if (webpackConfig.babel) {
+      webpackConfig.babel.presets.push(require.resolve('babel-preset-react-hmre'));
+    }
 
     // Hot reload plugin
     webpackConfig.plugins.push(new webpack.HotModuleReplacementPlugin());
