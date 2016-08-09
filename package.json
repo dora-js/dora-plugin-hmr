@@ -42,7 +42,7 @@
   "peerDependencies": {
     "atool-build": "0.x",
     "dora-plugin-webpack": "0.x",
-    "dora": "0.3.x"
+    "dora": "0.4.x"
   },
   "babel": {
     "presets": [
